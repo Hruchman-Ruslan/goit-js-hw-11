@@ -3,10 +3,10 @@ import NewApiService from './js/api_service';
 import LoadMoreBtn from './js/load_more_btn';
 import { createGalleryMarkup } from './js/create_gallery_markup';
 
-const putMarkup = images => {
+const putMarkup = image => {
   refs.containerCards.insertAdjacentHTML(
     'beforeend',
-    createGalleryMarkup(images)
+    createGalleryMarkup(image)
   );
 };
 
@@ -19,8 +19,6 @@ const loadMoreBtn = new LoadMoreBtn({
   hidden: true,
 });
 const newApiService = new NewApiService();
-
-console.log(loadMoreBtn);
 
 const onSearchImages = e => {
   e.preventDefault();
@@ -40,8 +38,8 @@ const onSearchImages = e => {
 
 const fetchArticles = () => {
   loadMoreBtn.disable();
-  newApiService.fetchArticles().then(hits => {
-    putMarkup(hits);
+  newApiService.fetchArticles().then(image => {
+    putMarkup(image);
     loadMoreBtn.enable();
   });
 };

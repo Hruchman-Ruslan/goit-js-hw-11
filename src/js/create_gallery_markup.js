@@ -1,5 +1,5 @@
-export const createGalleryMarkup = images => {
-  return images
+export const createGalleryMarkup = image => {
+  return image
     .map(
       ({
         webformatURL,

@@ -16,14 +16,12 @@ export default class NewApiService {
       this.page
     }&orientation=horizontal&safesearch=true`;
 
-    return fetch(URL)
-      .then(response => response.json())
-      .then(({ hits }) => {
-        this.incrementPage();
-        console.log(hits);
+    const response = await fetch(URL);
+    const { hits } = await response.json();
+    this.incrementPage();
+    console.log(hits);
 
-        return hits;
-      });
+    return hits;
   }
 
   incrementPage() {
@@ -33,12 +31,12 @@ export default class NewApiService {
   resetPage() {
     this.page = 1;
   }
-
-  // get query() {
-  //   return this.searchQuery;
-  // }
-
-  // set query(newQuery) {
-  //   this.searchQuery = newQuery;
-  // }
 }
+
+// get query() {
+//   return this.searchQuery;
+// }
+
+// set query(newQuery) {
+//   this.searchQuery = newQuery;
+// }
