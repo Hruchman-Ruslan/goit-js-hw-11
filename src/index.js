@@ -4,6 +4,7 @@ import NewApiService from './js/api_service';
 import LoadMoreBtn from './js/load_more_btn';
 import { createGalleryMarkup } from './js/create_gallery_markup';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { smoothScroll } from './js/smooth_page_scroll';
 
 const putMarkup = image => {
   refs.containerCards.insertAdjacentHTML(
@@ -55,6 +56,7 @@ const fetchArticles = async () => {
     }
 
     lightbox.refresh();
+    smoothScroll();
   } catch (error) {
     console.log(error);
   }
