@@ -12,7 +12,7 @@ export const createGalleryMarkup = image => {
       }) =>
         `<div class="photo-card">
             <a href="${largeImageURL}">
-                <img class="photo-img" src="${webformatURL}" alt="${tags}" width="520px" height="320px" loading="lazy" />
+                <img class="photo-img" src="${webformatURL}" alt="${tags}" width="600px" height="320px" loading="lazy" />
             </a>
             <div class="info">
                 <p class="info-item">
