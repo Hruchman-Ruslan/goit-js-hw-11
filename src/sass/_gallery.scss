@@ -1,0 +1,34 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+a {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.photo-card {
+  display: inline-block;
+  flex-direction: column;
+  //   min-width: 540px;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+
+  color: aqua;
+}
+
+.info-item {
+  gap: 10px;
+}
+
+// img {
+//   display: block;
+// }

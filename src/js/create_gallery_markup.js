@@ -12,20 +12,24 @@ export const createGalleryMarkup = image => {
       }) =>
         `<div class="photo-card">
             <a href="${largeImageURL}">
-                <img class="photo-img" src="${webformatURL}" alt="${tags}" loading="lazy" />
+                <img class="photo-img" src="${webformatURL}" alt="${tags}" width="520px" height="320px" loading="lazy" />
             </a>
             <div class="info">
                 <p class="info-item">
-                <b>Likes</b>${likes}
+                <b>Likes</b>
+                ${likes}
                 </p>
                 <p class="info-item">
-                <b>Views</b>${views}
+                <b>Views</b>
+                ${views}
                 </p>
                 <p class="info-item">
-                <b>Comments</b>${comments}
+                <b>Comments</b>
+                ${comments}
                 </p>
                 <p class="info-item">
-                <b>Downloads</b>${downloads}
+                <b>Downloads</b>
+                ${downloads}
                 </p>
             </div>
         </div>`

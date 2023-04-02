@@ -1,0 +1,43 @@
+.search-form {
+  display: flex;
+  justify-content: center;
+
+  padding: 30px;
+  margin-bottom: 50px;
+
+  background: radial-gradient(
+    circle,
+    rgba(196, 20, 195, 1) 0%,
+    rgba(27, 175, 223, 0) 29%,
+    rgba(255, 0, 236, 1) 63%
+  );
+
+  background-size: 400%;
+  animation: gradient 10s infinite reverse;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 80% 0%;
+  }
+  50% {
+    background-position: 20% 100%;
+  }
+  100% {
+    background-position: 80% 0%;
+  }
+}
+
+input {
+  text-align: center;
+
+  font: inherit;
+  font-weight: 700;
+
+  border: solid 2px aqua;
+  outline: none;
+
+  padding: 8px 120px;
+
+  background-color: aqua;
+}

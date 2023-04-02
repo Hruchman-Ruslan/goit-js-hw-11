@@ -2,6 +2,7 @@ import { refs } from './js/get_refs';
 import NewApiService from './js/api_service';
 import LoadMoreBtn from './js/load_more_btn';
 import { createGalleryMarkup } from './js/create_gallery_markup';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const putMarkup = image => {
   refs.containerCards.insertAdjacentHTML(
@@ -27,7 +28,9 @@ const onSearchImages = e => {
   newApiService.searchQuery = e.currentTarget.elements.searchQuery.value;
 
   if (newApiService.searchQuery === '') {
-    return alert('no-no');
+    return Notify.failure(
+      'Sorry, there are no images matching your search query. Please try again.'
+    );
   }
 
   loadMoreBtn.show();
@@ -36,12 +39,20 @@ const onSearchImages = e => {
   fetchArticles();
 };
 
-const fetchArticles = () => {
-  loadMoreBtn.disable();
-  newApiService.fetchArticles().then(image => {
-    putMarkup(image);
+const fetchArticles = async () => {
+  try {
+    loadMoreBtn.disable();
+    const { hits, totalHits } = await newApiService.fetchArticles();
+    putMarkup(hits);
     loadMoreBtn.enable();
-  });
+
+    if (refs.containerCards.children.length >= totalHits) {
+      loadMoreBtn.hide();
+      Notify.info(`We're sorry, but you've reached the end of search results.`);
+    }
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 refs.form.addEventListener('submit', onSearchImages);
