@@ -59,7 +59,9 @@ const fetchArticles = async () => {
       loadMoreBtn.hide();
       Notify.info(`We're sorry, but you've reached the end of search results.`);
     } else {
-      Notify.success(`Hooray! We found ${totalHits} images.`);
+      setTimeout(() => {
+        Notify.success(`Hooray! We found ${totalHits} images.`);
+      }, 800);
     }
 
     lightbox.refresh();
