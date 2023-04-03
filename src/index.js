@@ -49,11 +49,17 @@ const fetchArticles = async () => {
     putMarkup(hits);
     loadMoreBtn.enable();
 
-    if (refs.containerCards.children.length >= totalHits) {
+    if (!hits.length) {
+      loadMoreBtn.hide();
+      clearGalleryMarkup();
+      Notify.failure(
+        'Sorry, there are no images matching your search query. Please try again.'
+      );
+    } else if (refs.containerCards.children.length >= totalHits) {
       loadMoreBtn.hide();
       Notify.info(`We're sorry, but you've reached the end of search results.`);
     } else {
-      Notify.info(`Hooray! We found ${totalHits} images.`);
+      Notify.success(`Hooray! We found ${totalHits} images.`);
     }
 
     lightbox.refresh();
