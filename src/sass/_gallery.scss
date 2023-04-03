@@ -46,6 +46,28 @@ a {
   transform: translateY(0);
 
   filter: drop-shadow(0px 0px 15px #00ffff);
+
+  background: radial-gradient(
+    circle,
+    rgba(196, 20, 195, 1) 12%,
+    rgba(0, 255, 255, 1) 33%,
+    rgba(29, 11, 28, 1) 61%
+  );
+
+  background-size: 400%;
+  animation: gradient 10s infinite reverse;
+
+  @keyframes gradient {
+    0% {
+      background-position: 80% 0%;
+    }
+    50% {
+      background-position: 20% 100%;
+    }
+    100% {
+      background-position: 80% 0%;
+    }
+  }
 }
 
 .info-item {

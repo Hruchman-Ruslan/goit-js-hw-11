@@ -6,7 +6,7 @@ import { createGalleryMarkup } from './js/create_gallery_markup';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { smoothScroll } from './js/smooth_page_scroll';
 
-const putMarkup = image => {
+const renderMarkup = image => {
   refs.containerCards.insertAdjacentHTML(
     'beforeend',
     createGalleryMarkup(image)
@@ -46,7 +46,7 @@ const fetchArticles = async () => {
   try {
     loadMoreBtn.disable();
     const { hits, totalHits } = await newApiService.fetchArticles();
-    putMarkup(hits);
+    renderMarkup(hits);
     loadMoreBtn.enable();
 
     if (!hits.length) {
