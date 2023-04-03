@@ -21,6 +21,7 @@ const loadMoreBtn = new LoadMoreBtn({
   selector: '.load-more',
   hidden: true,
 });
+
 const newApiService = new NewApiService();
 
 const onSearchImages = e => {
