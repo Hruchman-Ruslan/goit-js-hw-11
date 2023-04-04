@@ -34,10 +34,13 @@
       background-position: 80% 0%;
     }
   }
+
+  filter: drop-shadow(0 0 10px #00ffff);
+  transition: filter 0.5s ease-out;
 }
 
 .load-more:hover {
-  filter: drop-shadow(0px 0px 15px #00ffff);
+  filter: drop-shadow(0px 0px 30px #00ffff);
 }
 
 .is-hidden {
