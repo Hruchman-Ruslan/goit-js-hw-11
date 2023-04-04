@@ -17,7 +17,7 @@ export default class NewApiService {
       image_type: 'photo',
       orientation: 'horizontal',
       safesearch: 'true',
-      per_page: 40,
+      per_page: 12,
       page: this.page,
     });
 

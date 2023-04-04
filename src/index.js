@@ -60,7 +60,8 @@ const fetchArticles = async () => {
       Notify.info(`We're sorry, but you've reached the end of search results.`);
     } else {
       setTimeout(() => {
-        Notify.success(`Hooray! We found ${totalHits} images.`);
+        const imagesLeft = totalHits - refs.containerCards.children.length;
+        Notify.success(`Hooray! We found ${imagesLeft} images.`);
       }, 800);
     }
 
