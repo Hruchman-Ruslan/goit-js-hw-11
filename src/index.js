@@ -28,7 +28,7 @@ const onSearchImages = e => {
   e.preventDefault();
 
   clearGalleryMarkup();
-  newApiService.searchQuery = e.currentTarget.elements.searchQuery.value;
+  newApiService.searchQuery = e.currentTarget.elements.searchQuery.value.trim();
 
   if (newApiService.searchQuery === '') {
     return Notify.failure(
