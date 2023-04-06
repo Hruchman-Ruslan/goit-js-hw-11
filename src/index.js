@@ -57,7 +57,7 @@ const fetchArticles = async () => {
       );
     } else if (refs.containerCards.children.length >= totalHits) {
       loadMoreBtn.hide();
-      Notify.info(`We're sorry, but you've reached the end of search results.`);
+      Notify.info("We're sorry, but you've reached the end of search results.");
     } else {
       setTimeout(() => {
         const imagesLeft = totalHits - refs.containerCards.children.length;
